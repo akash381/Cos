@@ -233,10 +233,12 @@ float roundOff(float var)
     float value = (int)(var * 100 + .5);
     return (float)value / 100;
 }
+
+//verifying owner
 bool verifyOwner(node* gNode,string key)
 {
     string s = gNode->data;
-    if(key.equals(keyOf(s)))
+    if(strcmp(key,keyOf(s))
     {
         cout<<"verified user\n";
         return true;
@@ -279,7 +281,9 @@ int main()
 
     cout<<"Children of a node : ";
     getChildren(GenesisNode);
-
-
+    string s;
+    getline(cin,s);
+    cout<<"Enter key to verify : ";
+    verifyOwner(GenesisNode,s);
 
 }
