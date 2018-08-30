@@ -124,6 +124,8 @@ string decrypt(string s)
     data.append(s,i+1,2);
     return data;
 }
+
+//to find value of a node
 float valueOfNode(node * temp)
 {
     if(temp==NULL)
@@ -231,6 +233,20 @@ float roundOff(float var)
     float value = (int)(var * 100 + .5);
     return (float)value / 100;
 }
+bool verifyOwner(node* gNode,string key)
+{
+    string s = gNode->data;
+    if(key.equals(keyOf(s)))
+    {
+        cout<<"verified user\n";
+        return true;
+    }
+    //else
+    {
+        cout<<"Not verified user\n";
+        return false;
+    }
+}
 int main()
 {
     node* GenesisNode = NULL;
@@ -260,6 +276,10 @@ int main()
         cout<<"Enter another entry (Y:for yes\t N:for no) : ";
         cin>>input;
     }
+
+    cout<<"Children of a node : ";
+    getChildren(GenesisNode);
+
 
 
 }
